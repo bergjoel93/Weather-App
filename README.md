@@ -30,3 +30,11 @@
 
 - The background color changes based on the weather condition.
 - The search bar query reacts to typing.
+
+## Credit
+
+---
+
+The design and layout was inspired by a different TOPS user named codeSwish.
+repo: https://gitlab.com/CodeSwish/weather_app/-/blob/main/README.md
+live: https://weather-app-codeswish-ee40934d959c5c333751aa0e680f7ba2a27f766a3.gitlab.io/

@@ -248,6 +248,7 @@ function changeBackground(weatherData) {
       body.style.background = `
         linear-gradient(0deg, rgba(221,160,99,1) 13%, rgba(138,202,231,1) 46%, rgba(238,238,238,1) 83%)
     `;
+      body.style.color = "black";
       break;
     case "cloudy":
       body.style.background = `
