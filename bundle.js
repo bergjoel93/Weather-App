@@ -4633,12 +4633,15 @@ function changeBackground(weatherData) {
       break;
     case "cloudy":
       body.style.background = "\n        linear-gradient(0deg, rgba(79,74,68,1) 13%, rgba(209,209,209,1) 46%, rgba(172,172,172,1) 83%)\n      ";
+      body.style.color = "black";
       break;
     case "fog":
       body.style.background = "\n      linear-gradient(0deg, rgba(95,94,93,1) 5%, rgba(229,229,229,1) 39%, rgba(244,244,244,1) 83%)\n    ";
+      body.style.color = "black";
       break;
     case "snow":
       body.style.background = "\n      linear-gradient(0deg, rgba(95,94,93,1) 5%, rgba(229,229,229,1) 39%, rgba(244,244,244,1) 83%)\n    ";
+      body.style.color = "black";
       break;
     case "thunder":
       body.style.background = "\n        linear-gradient(90deg, rgba(95,94,93,1) 30%, rgba(247,230,102,1) 39%, rgba(186,186,186,1) 46%)";
@@ -4646,6 +4649,7 @@ function changeBackground(weatherData) {
       break;
     default:
       body.style.background = "\n       linear-gradient(0deg, rgba(133,77,14,1) 25%, rgba(1,134,203,1) 75%)\n      ";
+      body.style.color = "black";
       break;
   }
   function categorizeWeatherCondition(condition) {
