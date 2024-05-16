@@ -3,7 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= htmlWebpackPlugin.options.title %></title>
+    <title>Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
-  <body></body>
+  <body>
+    <header><h1>Weather App</h1></header>
+    <main>
+      <div class="current">
+        <div class="location" id="location"></div>
+        <div class="current-date"></div>
+        <input
+          type="text"
+          class="search-bar"
+          id="search-bar"
+          placeholder="Search location..."
+          required
+          minlength="3"
+        />
+        <h2 class="current-condition" id="current-conditions"></h2>
+        <div class="panel-1">
+          <div class="weather-icon">
+            <img
+              src=""
+              id="weather-icon"
+              alt="Weather icon dynamically sourced. "
+            />
+          </div>
+
+          <div class="current-temperature" id="current-temperature"></div>
+        </div>
+        <div class="panel-2">
+          <div class="card">
+            <div class="card-title">
+              <span class="material-symbols-outlined"> air </span>
+              <span class="sub-title" id="wind-direction"></span>
+            </div>
+            <span id="wind-speed"></span>
+          </div>
+          <div class="card" id="uv-card">
+            <div class="card-title">
+              <span class="material-symbols-outlined"> sunny </span>
+              <span class="sub-title">UV</span>
+            </div>
+            <div><span id="uv"></span></div>
+          </div>
+
+          <div class="card" id="aqi-card">
+            <div class="card-title">
+              <span class="material-symbols-outlined"> masks </span>
+              <span class="sub-title">AQI</span>
+            </div>
+            <span id="aqi"></span>
+          </div>
+          <div class="card">
+            <div class="card-title sub-title" id="feels-like-title">
+              Feels Like
+            </div>
+            <span id="feelsLike"></span>
+          </div>
+          <div class="card">
+            <div class="card-title sub-title" id="high-low-title">
+              <span class="material-symbols-outlined"> thermometer_gain </span>
+              <span class="material-symbols-outlined"> thermometer_loss </span>
+            </div>
+            <div class="high-low">
+              <span id="high"></span>
+              <span id="low"></span>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">
+              <span class="material-symbols-outlined"> rainy </span>
+              <span class="sub-title">Rain</span>
+            </div>
+            <span id="rain"></span>
+          </div>
+          <div class="card">
+            <div class="card-title sub-title">Sunrise</div>
+            <span id="sunrise"></span>
+          </div>
+          <div class="card">
+            <div class="card-title sub-title">Sunset</div>
+            <span id="sunset"></span>
+          </div>
+        </div>
+      </div>
+      <div class="threeDay">
+        <div class="card2" id="day1">
+          <div class="date1"></div>
+          <div class="day1-icon"><img id="day1-icon" src="" alt="" /></div>
+          <div class="day1-high-low">
+            <div class="day1-low"></div>
+            <div class="day1-high"></div>
+          </div>
+        </div>
+        <div class="card2" id="day2">
+          <div class="date2"></div>
+          <div class="day2-icon"><img id="day2-icon" src="" alt="" /></div>
+          <div class="day2-high-low">
+            <div class="day2-low"></div>
+            <div class="day2-high"></div>
+          </div>
+        </div>
+        <div class="card3" id="day3">
+          <div class="date3"></div>
+          <div class="day3-icon"><img id="day3-icon" src="" alt="" /></div>
+          <div class="day3-high-low">
+            <div class="day3-low"></div>
+            <div class="day3-high"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>

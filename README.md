@@ -24,6 +24,9 @@
 7. Optional: add a ‘loading’ component that displays from the time the form is submitted until the information comes back from the API. Use DevTools to test for low-end devices.
 8. Push that baby to github and share your solution below!
 
-## Lesson Learned
+## Things of Note
 
 ---
+
+- The background color changes based on the weather condition.
+- The search bar query reacts to typing.

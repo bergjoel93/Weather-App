@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media (min-width: 500px) {
+  html,
+  body {
+    height: 100%;
+  }
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
+  font-family: "Poetsen One", sans-serif;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px;
+  width: 80%;
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.location {
+  margin: 1rem;
+}
+
+input {
+  margin: 1rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-style: none;
+  padding: 8px;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.panel-1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.current-temperature {
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 8px;
+}
+
+@media (max-width: 500px) {
+  .panel-2 {
+    grid-template-columns: repeat(2, 1fr); /* For narrow screens: 2 columns */
+    grid-template-rows: repeat(4, 1fr); /* For narrow screens: 4 rows */
+  }
+  .current-temperature {
+    font-size: 2rem;
+  }
+}
+
+.card {
+  width: 110px;
+  height: 110px;
+  border: solid black 1px;
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+.card-title {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  font-size: 1.5rem;
+}
+.threeDay {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 16px;
+}
+
+#high-low-title {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+#high-low-title > :first-child {
+  border-right: solid #ffff 1px;
+}
+
+.high-low {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+#high,
+#low {
+  font-size: 12px;
+}
+#high {
+  border-right: solid #ffff 1px;
+}
+
+.material-symbols-outlined {
+  font-size: 2.4rem;
+}
+
+.card > :last-child {
+  align-self: start;
+  font-size: 1.3rem;
+}
+
+#feels-like-title {
+  font-size: 1.2rem;
+}
+
+.sub-title {
+  height: 100%;
+  font-size: 25px;
+  display: flex;
+  padding-top: 12px;
+  font-weight: lighter;
+}
