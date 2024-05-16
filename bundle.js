@@ -4588,7 +4588,7 @@ function _getCurrentWeatherJSON() {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
           apiKey = "aa1328b351db477fb30205829240905";
-          url = "http://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(location, "&days=4&aqi=yes&alerts=no"); // Try to fetch the data from the weather API
+          url = "https://api.weatherapi.com/v1/forecast.json?key=".concat(apiKey, "&q=").concat(location, "&days=4&aqi=yes&alerts=no"); // Try to fetch the data from the weather API
           _context4.prev = 2;
           _context4.next = 5;
           return fetch(url);
