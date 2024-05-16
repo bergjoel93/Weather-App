@@ -206,7 +206,7 @@ async function getWeatherData(location) {
 
 async function getCurrentWeatherJSON(location) {
   const apiKey = "aa1328b351db477fb30205829240905";
-  const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=4&aqi=yes&alerts=no`;
+  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=4&aqi=yes&alerts=no`;
   // Try to fetch the data from the weather API
   try {
     // await the response from the fetch request to the API URL.
