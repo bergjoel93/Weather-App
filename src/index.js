@@ -1,5 +1,5 @@
 import "./styles/style.css";
-import { format } from "date-fns";
+import { format, parseISO, addDays } from "date-fns";
 
 defaultState();
 
@@ -29,7 +29,7 @@ function render(data) {
   location.innerHTML = locationString;
   // todays date
   const date = document.querySelector(".current-date");
-  date.innerHTML = format(data.date, "MMMM d yyyy");
+  date.innerHTML = format(parseISO(data.date), "MMMM d yyyy");
   // Conditions
   const currentCondition = document.querySelector(".current-condition");
   currentCondition.innerHTML = `${data.condition}`;
@@ -155,10 +155,10 @@ async function getWeatherData(location) {
     "Saturday",
   ];
   const data = await getCurrentWeatherJSON(location);
+  //console.log(data);
   // check if data and the necessary fields exist
   if (!data || !data.location || !data.current || !data.forecast) {
     console.error("Invalid or incomplete data received!");
-
     return null;
   } else {
     // Extract the relevant information from data
@@ -167,7 +167,7 @@ async function getWeatherData(location) {
       location: data.location.name,
       region: data.location.region,
       country: data.location.country,
-      date: new Date(data.forecast.forecastday[0].date),
+      date: data.forecast.forecastday[0].date,
       temperatureF: data.current.temp_f,
       condition: data.current.condition.text,
       icon: data.current.condition.icon,
@@ -184,20 +184,21 @@ async function getWeatherData(location) {
       chanceRain: data.forecast.forecastday[0].day.daily_chance_of_rain,
       sunrise: data.forecast.forecastday[0].astro.sunrise,
       sunset: data.forecast.forecastday[0].astro.sunset,
-      date1: weekday[new Date(data.forecast.forecastday[1].date).getDay()],
-      day1Icon: data.forecast.forecastday[1].day.condition.icon,
-      high1: data.forecast.forecastday[1].day.maxtemp_f,
-      low1: data.forecast.forecastday[1].day.mintemp_f,
-      date2: weekday[new Date(data.forecast.forecastday[2].date).getDay()],
-      day2Icon: data.forecast.forecastday[2].day.condition.icon,
-      high2: data.forecast.forecastday[2].day.maxtemp_f,
-      low2: data.forecast.forecastday[2].day.mintemp_f,
-      date3: weekday[new Date(data.forecast.forecastday[3].date).getDay()],
-      day3Icon: data.forecast.forecastday[3].day.condition.icon,
-      high3: data.forecast.forecastday[3].day.maxtemp_f,
-      low3: data.forecast.forecastday[3].day.mintemp_f,
+      // Use date strings directly to be parsed in the render function
+      date1: format(parseISO(data.forecast.forecastday[0].date), "EEEE"),
+      day1Icon: data.forecast.forecastday[0].day.condition.icon,
+      high1: data.forecast.forecastday[0].day.maxtemp_f,
+      low1: data.forecast.forecastday[0].day.mintemp_f,
+      date2: format(parseISO(data.forecast.forecastday[1].date), "EEEE"),
+      day2Icon: data.forecast.forecastday[1].day.condition.icon,
+      high2: data.forecast.forecastday[1].day.maxtemp_f,
+      low2: data.forecast.forecastday[1].day.mintemp_f,
+      date3: format(parseISO(data.forecast.forecastday[2].date), "EEEE"),
+      day3Icon: data.forecast.forecastday[2].day.condition.icon,
+      high3: data.forecast.forecastday[2].day.maxtemp_f,
+      low3: data.forecast.forecastday[2].day.mintemp_f,
     };
-    console.log(weatherData);
+    //console.log(weatherData.date);
     return weatherData;
   }
 }
@@ -213,7 +214,7 @@ async function getCurrentWeatherJSON(location) {
     const response = await fetch(url);
     // await the trasnformation of the respons to JSON format.
     const data = await response.json();
-    console.log(data);
+    //console.log(data);
     return data;
   } catch (error) {
     // log any errors encountered during the fetch operation to the console.
@@ -227,7 +228,7 @@ async function getCurrentWeatherJSON(location) {
 function changeBackground(weatherData) {
   const body = document.querySelector("body");
   const condition = weatherData.condition.toLowerCase();
-  console.log(condition);
+  //console.log(condition);
 
   switch (categorizeWeatherCondition(condition)) {
     case "rain":
